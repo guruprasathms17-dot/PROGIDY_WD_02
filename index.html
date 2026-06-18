@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StopWatch | Prodigy Infotech Task-02</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Animated background particles -->
+  <div class="particles" id="particles"></div>
+  <div class="bg-blur blur1"></div>
+  <div class="bg-blur blur2"></div>
+  <div class="bg-blur blur3"></div>
+
+  <div class="app">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="brand-tag">PRODIGY INFOTECH · TASK 02</div>
+      <div class="author-tag">By : Guruprasath M S</div>
+      <h1 class="logo">STOP<span class="highlight">WATCH</span></h1>
+      <p class="tagline">Measure Every Moment</p>
+    </header>
+
+    <!-- SVG Ring + Clock -->
+    <div class="ring-wrapper">
+      <svg class="ring-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer decorative dashes -->
+        <circle class="deco-ring" cx="160" cy="160" r="155"/>
+        <!-- Track -->
+        <circle class="track" cx="160" cy="160" r="138"/>
+        <!-- Progress arc -->
+        <circle class="progress-arc" id="progressArc" cx="160" cy="160" r="138"/>
+        <!-- Second hand dot -->
+        <circle class="sec-dot" id="secDot" cx="160" cy="22" r="5"/>
+      </svg>
+
+      <!-- Inner clock face -->
+      <div class="clock-face">
+        <div class="status-label" id="statusLabel">READY</div>
+        <div class="time" id="timeDisplay">
+          <span id="hh">00</span><span class="sep">:</span><span id="mm">00</span><span class="sep">:</span><span id="ss">00</span>
+        </div>
+        <div class="ms-display"><span id="ms">000</span> ms</div>
+        <div class="lap-info" id="lapInfo">— laps recorded —</div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button class="ctrl-btn lap-btn" id="lapBtn" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+        <span>LAP</span>
+      </button>
+
+      <button class="ctrl-btn main-btn" id="startBtn">
+        <svg class="icon-play" id="iconPlay" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+        <svg class="icon-pause hidden" id="iconPause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        <span id="startLabel">START</span>
+      </button>
+
+      <button class="ctrl-btn reset-btn" id="resetBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.49"/></svg>
+        <span>RESET</span>
+      </button>
+    </div>
+
+    <!-- Lap Table -->
+    <div class="laps-container" id="lapsContainer">
+      <div class="laps-head">
+        <span>LAP</span><span>SPLIT TIME</span><span>TOTAL TIME</span><span>DIFF</span>
+      </div>
+      <ul class="laps-list" id="lapsList"></ul>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
